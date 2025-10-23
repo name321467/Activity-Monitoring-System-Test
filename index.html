@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запуск системы контроля</title>
+    <style>
+        /* Общие стили для страницы в темной теме */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            /* Глубокий темный фон */
+            color: #e0e0e0;
+            /* Светло-серый цвет для основного текста */
+        }
+
+        /* Контейнер для центрирования всего содержимого */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Стильная карточка для контента в темной теме */
+        .content-box {
+            background-color: #1e1e1e;
+            /* Темно-серый фон для карточки */
+            padding: 40px 60px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            /* Более выраженная тень для темной темы */
+            text-align: center;
+            max-width: 500px;
+            border: 1px solid #2c2c2c;
+            /* Тонкая рамка для выделения */
+        }
+
+        /* Стили для заголовка */
+        h1 {
+            font-size: 2.2em;
+            color: #ffffff;
+            /* Яркий белый заголовок */
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* Стили для пояснительного текста */
+        p {
+            font-size: 1.1em;
+            color: #a0a0a0;
+            /* Более мягкий серый для текста */
+            margin-bottom: 30px;
+        }
+
+        /* Стили для главной кнопки */
+        #launchButton {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 40px;
+            color: white;
+            background-color: #0d6efd;
+            /* Яркий, насыщенный синий */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Эффект при наведении на кнопку */
+        #launchButton:hover {
+            background-color: #3b82f6;
+            /* Более светлый синий при наведении */
+            transform: translateY(-3px);
+            /* Легкий подъем */
+            box-shadow: 0 4px 20px rgba(13, 110, 253, 0.4);
+            /* Синее свечение */
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 600px) {
+            .content-box {
+                padding: 30px 25px;
+                border: none;
+                /* Убираем рамку на маленьких экранах */
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content-box">
+            <h1>Система контроля активности</h1>
+            <p>Нажмите на кнопку ниже, чтобы начать сеанс в защищенном режиме.</p>
+            <button id="launchButton">Начать сеанс</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript остается без изменений, он не зависит от темы
+        const launchButton = document.getElementById('launchButton');
+
+        launchButton.addEventListener('click', function () {
+
+            const windowFeatures = `left=0,top=0,width=${screen.availWidth},height=${screen.availHeight},menubar=no,toolbar=no,status=no,scrollbars=yes,resizable=yes`;
+
+            // Убедитесь, что ваш файл с тестом называется именно 'index.html'
+            window.open('test.html', '_blank', windowFeatures);
+
+        });
+    </script>
+
+</body>
+
+</html>
